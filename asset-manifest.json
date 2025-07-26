@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/KumarChandra-iima/kc-react-portfolio/static/css/main.e6c13ad2.css",
-    "main.js": "/KumarChandra-iima/kc-react-portfolio/static/js/main.30d27bdb.js",
-    "static/js/453.b0357fd8.chunk.js": "/KumarChandra-iima/kc-react-portfolio/static/js/453.b0357fd8.chunk.js",
-    "index.html": "/KumarChandra-iima/kc-react-portfolio/index.html",
-    "main.e6c13ad2.css.map": "/KumarChandra-iima/kc-react-portfolio/static/css/main.e6c13ad2.css.map",
-    "main.30d27bdb.js.map": "/KumarChandra-iima/kc-react-portfolio/static/js/main.30d27bdb.js.map",
-    "453.b0357fd8.chunk.js.map": "/KumarChandra-iima/kc-react-portfolio/static/js/453.b0357fd8.chunk.js.map"
+    "main.css": "/kc-react-portfolio/static/css/main.e6c13ad2.css",
+    "main.js": "/kc-react-portfolio/static/js/main.92798884.js",
+    "static/js/453.b0357fd8.chunk.js": "/kc-react-portfolio/static/js/453.b0357fd8.chunk.js",
+    "index.html": "/kc-react-portfolio/index.html",
+    "main.e6c13ad2.css.map": "/kc-react-portfolio/static/css/main.e6c13ad2.css.map",
+    "main.92798884.js.map": "/kc-react-portfolio/static/js/main.92798884.js.map",
+    "453.b0357fd8.chunk.js.map": "/kc-react-portfolio/static/js/453.b0357fd8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.30d27bdb.js"
+    "static/js/main.92798884.js"
   ]
 }
