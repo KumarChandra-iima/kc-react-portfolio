@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ContactSection from "./Components/Contact/ContactSection";
 import ContactOverlay from "./Components/Contact/ContactOverlay";
 
 export default function Home() {
@@ -118,10 +117,8 @@ export default function Home() {
           viewport={{ once: false, amount: 0.2 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-       
-  <h3 className="text-2xl font-semibold text-blue-700 mb-2">Contact</h3>
-  <ContactOverlay />
-
+          <h3 className="text-2xl font-semibold text-blue-700 mb-2">Contact</h3>
+          <ContactOverlay />
 
           <p>
             Phone:{" "}
