@@ -61,7 +61,7 @@ export default function AboutSection() {
         <a
           href={`${process.env.PUBLIC_URL}/resume.pdf`}
           download
-          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+            className="resume-btn"
         >
           📄 Download My Resume
         </a>
