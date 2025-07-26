@@ -5,28 +5,28 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./ContactOverlay.css";
 
-export default function ContactOverlay() {
+export default function ContactOverlay({ userEmail }) {
   const [showOverlay, setShowOverlay] = useState(false);
   const [formDirty, setFormDirty] = useState(false);
   const [timestamp, setTimestamp] = useState("");
   const formRef = useRef();
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
+    try {
+      await emailjs.sendForm(
         "service_v9nxgfc",
         "template_l15tzuu",
         formRef.current,
         "ch5STSE1_vJXxoBCo"
-      )
-      .then(() => {
-        toast.success("Message sent successfully! 💌");
-        setShowOverlay(false);
-        setFormDirty(false);
-        formRef.current.reset();
-      })
-      .catch(() => toast.error("Something went wrong. Please try again."));
+      );
+      toast.success("Message sent successfully! 💌");
+      setShowOverlay(false);
+      setFormDirty(false);
+      formRef.current.reset();
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    }
   };
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function ContactOverlay() {
   return (
     <div className="contact-container">
       <button className="contact-button" onClick={() => setShowOverlay(true)}>
-        Drop a quick email to connect...
+        Contact Me
       </button>
 
       {showOverlay && (
@@ -85,7 +85,13 @@ export default function ContactOverlay() {
             >
               <input type="text" name="name" placeholder="Your Name" required />
               <input type="text" name="title" placeholder="Subject" required />
-              <input type="email" name="email" placeholder="Your Email" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                defaultValue={userEmail || ""}
+              />
               <textarea
                 name="message"
                 placeholder="Your Message"
