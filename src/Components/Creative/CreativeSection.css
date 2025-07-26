@@ -1,0 +1,70 @@
+/* src/Components/Creative/CreativeSection.css */
+
+.creative-section {
+  background: linear-gradient(to top right, #fff7f0, #ffffff);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.creative-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.creative-title {
+  font-size: 2.5rem;
+  color: #be123c;
+  margin-bottom: 40px;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.creative-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.creative-card {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  border-left: 6px solid #e11d48;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.creative-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.creative-card h3 {
+  font-size: 1.5rem;
+  color: #7f1d1d;
+  margin-bottom: 8px;
+}
+
+.creative-card p {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.creative-link {
+  display: inline-block;
+  color: #be123c;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.creative-link:hover {
+  color: #9f1239;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

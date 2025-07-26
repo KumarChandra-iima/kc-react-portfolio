@@ -1,47 +1,18 @@
-// ContactOverlay.js
-import React, { useState, useRef, useEffect } from "react";
+// src/Components/Contact/ContactOverlay.js
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "emailjs-com";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import "./ContactOverlay.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function ContactOverlay({ userEmail }) {
-  const [showOverlay, setShowOverlay] = useState(false);
-  const [formDirty, setFormDirty] = useState(false);
+export default function ContactOverlay({ onClose }) {
+  const form = useRef();
+  const [formTouched, setFormTouched] = useState(false);
   const [timestamp, setTimestamp] = useState("");
-  const formRef = useRef();
-
-  const sendEmail = async (e) => {
-    e.preventDefault();
-    try {
-      await emailjs.sendForm(
-        "service_v9nxgfc",
-        "template_l15tzuu",
-        formRef.current,
-        "ch5STSE1_vJXxoBCo"
-      );
-      toast.success("Message sent successfully! 💌");
-      setShowOverlay(false);
-      setFormDirty(false);
-      formRef.current.reset();
-    } catch {
-      toast.error("Something went wrong. Please try again.");
-    }
-  };
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape" && !formDirty) {
-        setShowOverlay(false);
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [formDirty]);
 
   useEffect(() => {
     const now = new Date();
-    const formattedTimestamp =
+    const formatted =
       now.getFullYear() +
       ":" +
       String(now.getMonth() + 1).padStart(2, "0") +
@@ -55,57 +26,68 @@ export default function ContactOverlay({ userEmail }) {
       String(now.getSeconds()).padStart(2, "0") +
       ":" +
       String(now.getMilliseconds()).padStart(3, "0");
-    setTimestamp(formattedTimestamp);
+    setTimestamp(formatted);
   }, []);
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const phoneInput = form.current.querySelector("input[name='phone']");
+    if (phoneInput && phoneInput.value.trim() === "") {
+      phoneInput.value = "Not Provided";
+    }
+
+    emailjs
+      .sendForm(
+        "service_v9nxgfc",
+        "template_l15tzuu",
+        form.current,
+        "ch5STSE1_vJXxoBCo"
+      )
+      .then(() => {
+        toast.success("✅ Message sent successfully!");
+          onClose();
+      })
+      .catch(() => {
+        toast.error("❌ Failed to send message. Try again later.");
+      });
+  };
+
+  const handleOverlayClick = (e) => {
+    if (!formTouched && e.target.classList.contains("contact-overlay")) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="contact-container">
-      <button className="contact-button" onClick={() => setShowOverlay(true)}>
-        Contact Me
-      </button>
-
-      {showOverlay && (
-        <div className="overlay">
-          <div className="overlay-content">
-            {formDirty && (
-              <button
-                className="close-button"
-                onClick={() => setShowOverlay(false)}
-              >
-                &times;
-              </button>
-            )}
-            <h2 className="overlay-title">Let’s Connect 💬</h2>
-
-            <form
-              ref={formRef}
-              onSubmit={sendEmail}
-              onChange={() => setFormDirty(true)}
-              className="overlay-form"
-            >
-              <input type="text" name="name" placeholder="Your Name" required />
-              <input type="text" name="title" placeholder="Subject" required />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-                defaultValue={userEmail || ""}
-              />
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                required
-              ></textarea>
-              <input type="hidden" name="timestamp" value={timestamp} />
-              <button type="submit" className="submit-button">
-                📩 Send
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
-      <ToastContainer position="bottom-right" />
+    <div className="contact-overlay" onClick={handleOverlayClick}>
+      <div className="contact-modal">
+        {formTouched && (
+          <button className="contact-close" onClick={onClose}>
+            ✖
+          </button>
+        )}
+        <h2>
+          <span className="contact-avatar">💬</span> Let’s Connect
+        </h2>
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="contact-form"
+          onChange={() => setFormTouched(true)}
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="tel" name="phone" placeholder="Your Phone (Optional)" />
+          <input type="text" name="title" placeholder="Subject" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <input type="hidden" name="timestamp" value={timestamp} />
+          <button type="submit">📨 Send Message</button>
+        </form>
+      </div>
     </div>
   );
 }
