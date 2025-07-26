@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ContactSection from "./Components/Contact/ContactSection";
+import ContactOverlay from "./Components/Contact/ContactOverlay";
 
 export default function Home() {
   return (
@@ -108,7 +110,6 @@ export default function Home() {
             <li>Microsoft Certified: Azure Fundamentals – AZ900 (Sep 2022)</li>
           </ul>
         </motion.section>
-
         {/* Contact */}
         <motion.section
           className="mb-8"
@@ -117,16 +118,11 @@ export default function Home() {
           viewport={{ once: false, amount: 0.2 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <h3 className="text-2xl font-semibold text-blue-700 mb-2">Contact</h3>
-          <p>
-            Email:{" "}
-            <a
-              className="text-blue-600 underline"
-              href="mailto:iima.kumarchandra@gmail.com"
-            >
-              iima.kumarchandra@gmail.com
-            </a>
-          </p>
+       
+  <h3 className="text-2xl font-semibold text-blue-700 mb-2">Contact</h3>
+  <ContactOverlay />
+
+
           <p>
             Phone:{" "}
             <a className="text-blue-600 underline" href="tel:+919980533965">
