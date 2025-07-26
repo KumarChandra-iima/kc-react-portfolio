@@ -146,7 +146,7 @@ export default function Home() {
           </p>
           <p className="mt-4">
             <a
-              href="/resume.pdf"
+              href={`${process.env.PUBLIC_URL}/resume.pdf`}
               download
               className="inline-block bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition"
             >
