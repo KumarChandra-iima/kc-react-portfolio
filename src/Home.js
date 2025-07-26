@@ -144,6 +144,15 @@ export default function Home() {
               linkedin.com/in/kumar-chandra-iima
             </a>
           </p>
+          <p className="mt-4">
+            <a
+              href="/resume.pdf"
+              download
+              className="inline-block bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition"
+            >
+              📄 Download Resume
+            </a>
+          </p>
         </motion.section>
       </motion.section>
     </main>
