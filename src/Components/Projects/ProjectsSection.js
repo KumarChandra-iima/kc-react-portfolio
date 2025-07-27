@@ -239,11 +239,13 @@ export default function ProjectsSection() {
                     >
                       <h4>{project.title}</h4>
                       <p>{project.description}</p>
-                      {project.tags.map((tag, tagIdx) => (
-                        <span className="tech-tag" key={tagIdx}>
-                          {tag}
-                        </span>
-                      ))}
+                      <div className="tech-tags">
+                            {project.tags.map((tag, tagIdx) => (
+                                <span className="tech-tag" key={tagIdx}>
+                                {tag}
+                                </span>
+                            ))}
+                        </div>
                     </div>
                   ))}
                 </div>
