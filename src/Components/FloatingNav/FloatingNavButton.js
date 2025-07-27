@@ -58,6 +58,15 @@ export default function FloatingNavButton({ triggerContactOverlay }) {
           >
             🎨 Creative
           </Link>
+        <a
+            href={`${process.env.PUBLIC_URL}/resume.pdf`}
+            download
+            className="nav-link"
+            onClick={() => setOpen(false)}
+            >
+            📄 Resume
+        </a>
+
           <button
             className="nav-link" // ✅ Same class as other nav items
             onClick={() => {
@@ -68,6 +77,8 @@ export default function FloatingNavButton({ triggerContactOverlay }) {
           >
             💌 Contact
           </button>
+          
+
         </div>
       )}
     </div>
