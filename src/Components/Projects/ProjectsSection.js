@@ -1,5 +1,5 @@
 // src/Components/Projects/ProjectsSection.js
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./ProjectsSection.css";
@@ -10,6 +10,7 @@ import IntegraLogo from "../../assets/logos/integra.png";
 import WellsFargoLogo from "../../assets/logos/wellsfargo.png";
 import NahilLogo from "../../assets/logos/nahil.png";
 import CloudSolutionsLogo from "../../assets/logos/cloudSolutions.png"; // Client logo
+import "./Timeline.css";
 
 const experienceTimeline = [
   {
@@ -137,11 +138,11 @@ const experienceTimeline = [
         tags: ["ReactJS", "ML.NET", "Azure"],
       },
       {
-        title: "Rewrite Monolith App to microservices based architecture",
+        title: "Rewrite Monolith web app to Microservices architecture",
         description:
-          "Rewrote an application as monolith in the classical legacy app to make it as a microservices based application",
-        tags: ["Angular", "Kafka", "MirthConnect", "Azure Functions"],
-      }
+          "Refactored a monolith healthcare app to microservices-based architecture using Angular, Kafka, and Azure SQL backend.",
+        tags: ["Angular", "Kafka", "Azure SQL"],
+      },
     ],
   },
   {
@@ -173,50 +174,82 @@ const experienceTimeline = [
 ];
 
 export default function ProjectsSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Check on mount
+    handleResize();
+
+    // Update on resize
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const reversedTimeline = [...experienceTimeline].reverse(); // ✅ move this outside JSX
 
   return (
     <section className="projects-section" id="projects">
       <div className="projects-container">
-        <h2 className="projects-title">💼 Work & Projects Timeline</h2>
-        <div className="timeline-wrapper">
-          {experienceTimeline.map((exp, idx) => (
-            <div className="timeline-entry" key={idx} data-aos="fade-up">
-              <div className="company-header">
-                <img
-                  src={exp.logo}
-                  alt={exp.company}
-                  className="company-logo-inline"
-                />
-                <div className="company-meta">
-                  <h3 className="company-heading">{exp.company}</h3>
-                  <span className="duration">{exp.duration}</span>
-                </div>
-                {exp.clientLogo && (
-                  <img
-                    src={exp.clientLogo}
-                    alt="Client Logo"
-                    className="client-logo-inline"
-                  />
-                )}
-              </div>
-              <div className="projects-grid">
-                {exp.projects.map((project, index) => (
-                  <div className="project-card" key={index} data-aos="fade-up">
-                    <h4>{project.title}</h4>
-                    <p>{project.description}</p>
-                    {project.tags.map((tag, tagIdx) => (
-                      <span className="tech-tag" key={tagIdx}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                ))}
-              </div>
+        <div className="timeline-scroll-container">
+          {experienceTimeline.length > 1 && isMobile && (
+            <div className="swipe-hint">
+              <span className="swipe-left">←</span>
+              <span className="swipe-text">Swipe to explore</span>
+              <span className="swipe-right">→</span>
             </div>
-          ))}
+          )}
+          <h2 className="projects-title">💼 Work & Projects Timeline</h2>
+          <div
+            className={`timeline-wrapper ${
+              isMobile ? "horizontal-scroll" : ""
+            }`}
+          >
+            {reversedTimeline.map((exp, idx) => (
+              <div className="timeline-entry" key={idx} data-aos="fade-up">
+                <div className="company-header">
+                  <img
+                    src={exp.logo}
+                    alt={exp.company}
+                    className="company-logo-inline"
+                  />
+                  <div className="company-meta">
+                    <h3 className="company-heading">{exp.company}</h3>
+                    <span className="duration">{exp.duration}</span>
+                  </div>
+                  {exp.clientLogo && (
+                    <img
+                      src={exp.clientLogo}
+                      alt="Client Logo"
+                      className="client-logo-inline"
+                    />
+                  )}
+                </div>
+                <div className="projects-grid">
+                  {exp.projects.map((project, index) => (
+                    <div
+                      className="project-card"
+                      key={index}
+                      data-aos="fade-up"
+                    >
+                      <h4>{project.title}</h4>
+                      <p>{project.description}</p>
+                      {project.tags.map((tag, tagIdx) => (
+                        <span className="tech-tag" key={tagIdx}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
