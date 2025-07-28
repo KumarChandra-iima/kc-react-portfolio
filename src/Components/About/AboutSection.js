@@ -40,7 +40,7 @@ export default function AboutSection() {
               Social Science, and Science.
             </li>
             <li>
-              <strong>Intermediate (2003 – 2005):</strong>
+              <strong>DAV Public School, Bariatu, Ranchi (2003 – 2005):</strong>
               Pursued 11th & 12th in Science stream, followed by a gap year to
               prepare for engineering entrance exams.
             </li>
@@ -61,7 +61,7 @@ export default function AboutSection() {
         <a
           href={`${process.env.PUBLIC_URL}/resume.pdf`}
           download
-            className="resume-btn"
+          className="resume-btn"
         >
           📄 Download My Resume
         </a>
