@@ -6,10 +6,10 @@ import { ToastContainer } from "react-toastify";
 import AboutSection from "../Components/About/AboutSection";
 import SkillsSection from "../Components/Skills/SkillsSection";
 import ProjectsSection from "../Components/Projects/ProjectsSection";
-import CreativeSection from "../Components/Creative/CreativeSection";
+// import CreativeSection from "../Components/Creative/CreativeSection";
 import ContactOverlay from "../Components/Contact/ContactOverlay";
 import FloatingNavButton from "../Components/FloatingNav/FloatingNavButton";
-import CertificationsSection from "../Components/Certifications/CertificationsSection";
+// import CertificationsSection from "../Components/Certifications/CertificationsSection";
 
 export default function LandingPage() {
   const [showContact, setShowContact] = useState(false);
@@ -25,7 +25,7 @@ export default function LandingPage() {
             Kumar Chandra
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-600 mb-6 animate-slide-in">
-            Senior Technical Project Manager | Creative Learner | Mentor
+            Senior Technical Project Manager | Tech Leader & .NET Architect | Turning Business Insights into Azure Scalable Software | PRINCE2® | 14+ Years
           </h2>
           <p className="mb-8 text-lg md:text-xl animate-fade-in-delay">
             Bridging technology with purpose — 14+ years of delivering impact in
@@ -47,22 +47,22 @@ export default function LandingPage() {
             >
               💼 Work
             </Link>
-            <Link
+            {/* <Link
               to="certifications"
               smooth={true}
               duration={500}
               className="nav-btn"
             >
               📜 Certifications
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               to="creative"
               smooth={true}
               duration={500}
               className="nav-btn"
             >
               🎨 Creative
-            </Link>
+            </Link> */}
             <button
               onClick={() => setShowContact(true)}
               className="nav-btn bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-md shadow-lg transition duration-300"
@@ -86,12 +86,12 @@ export default function LandingPage() {
         <ProjectsSection />
       </section>
 
-      <section id="certifications">
+      {/* <section id="certifications">
         <CertificationsSection />
       </section>
       <section id="creative">
         <CreativeSection />
-      </section>
+      </section> */}
 
       {showContact && <ContactOverlay onClose={() => setShowContact(false)} />}
 

@@ -50,14 +50,14 @@ export default function FloatingNavButton({ triggerContactOverlay }) {
           >
             👔 Experience
           </Link>
-          <Link
+          {/* <Link
             to="creative"
             smooth={true}
             duration={500}
             onClick={() => setOpen(false)}
           >
             🎨 Creative
-          </Link>
+          </Link> */}
         <a
             href={`${process.env.PUBLIC_URL}/resume.pdf`}
             download
