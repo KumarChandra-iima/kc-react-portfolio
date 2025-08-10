@@ -28,8 +28,8 @@ export default function LandingPage() {
             Senior Technical Project Manager | Tech Leader & .NET Architect | Turning Business Insights into Azure Scalable Software | PRINCE2® | 14+ Years
           </h2>
           <p className="mb-8 text-lg md:text-xl animate-fade-in-delay">
-            Bridging technology with purpose — 14+ years of delivering impact in
-            healthcare, finance, and CSR. Welcome to my digital portfolio.
+            Building technology with purpose — 14+ years of delivering impact in
+            domains including healthcare and finance.
           </p>
 
           <div className="flex justify-center gap-4 flex-wrap">

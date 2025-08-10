@@ -6,56 +6,48 @@ export default function AboutSection() {
   return (
     <section id="about" className="about-section">
       <div className="about-container">
-        <h2 className="section-title">🧑‍💼 About Me</h2>
-        <p className="about-summary">
-          I am <strong>Kumar Chandra</strong>, a Senior Technical Project
-          Manager with over 14 years of rich and diverse experience in leading
-          end-to-end software delivery, project governance, architecture design,
-          and cross-functional team leadership. My expertise bridges the
-          healthcare, financial, and enterprise tech landscapes — consistently
-          delivering high-value solutions aligned with business goals.
-        </p>
-        <p className="about-summary">
-          Beyond the corporate arena, I am a creative learner, skilled mentor,
-          public speaker, and a passionate explorer of wellness through
-          hypnotherapy, music, and meditation. My curiosity and love for
-          learning have driven me to self-learn complex skills such as
-          harmonica, skating, and swimming.
-        </p>
-        <p className="about-summary">
-          With certifications in Prince2 Foundation and Microsoft Azure, I bring
-          a blend of structured project discipline and agile technical
-          innovation. I’m deeply committed to mentoring, CSR contributions, and
-          inspiring people to grow — technically and personally.
-        </p>
+  <h2 className="section-title">🧑‍💼 About Me</h2>
 
-        <div className="education-block">
-          <h3 className="subheading">🎓 Education</h3>
-          <ul className="education-list">
-            <li>
-              <strong>
-                Modern Public School, Deoghar, Jharkhand – 814112 (2003):
-              </strong>
-              Completed 10th grade with subjects Hindi, English, Mathematics,
-              Social Science, and Science.
-            </li>
-            <li>
-              <strong>DAV Public School, Bariatu, Ranchi (2003 – 2005):</strong>
-              Pursued 11th & 12th in Science stream, followed by a gap year to
-              prepare for engineering entrance exams.
-            </li>
-            <li>
-              <strong>Sir MVIT, Bangalore – VTU (2006 – 2010):</strong>
-              Bachelor’s in Information Science Engineering. Participated in
-              creative and leadership initiatives.
-            </li>
-          </ul>
-        </div>
+  <p className="about-summary">
+    I’m <strong>Kumar Chandra</strong>, an accomplished Senior Technical Project Manager with <strong>14+ years</strong> of proven expertise in delivering enterprise-level digital solutions and driving large-scale technology transformation. My leadership spans <strong>end-to-end software delivery, Agile project governance, and technical architecture</strong>, consistently bridging business strategy and technology execution across <strong>healthcare</strong> and <strong>financial services</strong> domains.
+  </p>
 
-        <p className="conclusion">
-          This is my journey — equal parts tech and soul.
-        </p>
-      </div>
+  <p className="about-summary">
+    Well-versed in <strong>cross-functional team leadership</strong>, I have managed diverse, high-performing teams to achieve excellence in areas like project initiation, scope definition, risk management, solution design, and process optimization. I excel at executing projects on time and within budget, with hands-on experience in <strong>proof-of-concept development</strong> and <strong>technology due diligence</strong>.
+  </p>
+
+  <p className="about-summary">
+    Certified in <strong>PRINCE2 Foundation</strong> and <strong>Microsoft Azure</strong>, I combine industry-standard IT project management methodologies with cloud transformation expertise. Passionate about professional development, I foster a culture of learning by conducting knowledge-sharing, mentoring, and brown bag sessions to upskill teams and nurture future leaders.
+  </p>
+
+  <div className="education-block">
+    <h3 className="subheading">🎓 Education</h3>
+    <ul className="education-list">
+      <li>
+        <strong>IIM Ahmedabad (2020–2021): </strong> Accelerated General Management Program, focused on strategic leadership, business analytics, and operational excellence.
+      </li>
+      <li>
+        <strong>Sir MVIT, Bangalore – VTU (2006–2010): </strong> B.E. in Information Science Engineering, with active involvement in tech events, innovation forums, and student leadership.
+      </li>
+      <li>
+        <strong>DAV Public School, Ranchi (2005): </strong> Science (11th–12th); strategic preparation for engineering competitive exams.
+      </li>
+      <li>
+        <strong>Modern Public School, Deoghar (2003): </strong> Academic distinction in STEM at the secondary level.
+      </li>
+    </ul>
+  </div>
+
+  <p className="about-summary">
+    Beyond core project management, I champion <strong>Corporate Social Responsibility (CSR)</strong> initiatives and continuously promote holistic growth. As a creative learner and advocate for well-being, I explore <strong>clinical hypnotherapy, music, and meditation</strong>—blending technical leadership with personal development.
+  </p>
+
+  <p className="conclusion">
+    This is my journey—a dynamic balance of technology strategy, transformation leadership, and human growth.
+  </p>
+</div>
+
+
 
       <div className="mt-4">
         <a
