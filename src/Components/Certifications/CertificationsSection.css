@@ -1,0 +1,157 @@
+.certifications-section {
+  background: #f4f6fa;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.certifications-scroll-wrapper {
+  max-height: 80vh;
+  overflow-y: auto;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding-bottom: 2rem;
+  width: 100%;
+  max-width: 960px;
+  position: relative;
+}
+
+.certifications-title-bar {
+  position: sticky;
+  top: 0;
+  background: #f4f6fa;
+  z-index: 10;
+  padding: 1.5rem 1rem 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.certifications-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+/* Container and content remains as is */
+.certifications-container {
+  padding: 1rem;
+}
+
+.cert-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+/* Modal button styling refinement */
+.cert-button {
+  display: inline-block;
+  background-color: #0d47a1;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.cert-button:hover {
+  background-color: #083a89;
+}
+
+/* Modal content padding */
+.cert-modal-content {
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+}
+
+
+
+
+.cert-card {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cert-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.cert-meta {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.cert-tags {
+  margin-top: 0.5rem;
+}
+
+.cert-tags span {
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0 0;
+  background: #e0f2f1;
+  color: #00695c;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  white-space: nowrap;
+}
+
+.cert-links {
+  margin-top: 0.75rem;
+}
+
+.cert-links a {
+  font-size: 0.8rem;
+  color: #0d47a1;
+  text-decoration: underline;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+/* Modal for in-page PDF/iframe preview */
+.cert-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.cert-modal-content iframe {
+  flex: 1;
+  border: none;
+}
+
+.cert-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+.cert-pdf-container {
+  max-width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}

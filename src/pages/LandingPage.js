@@ -9,6 +9,7 @@ import ProjectsSection from "../Components/Projects/ProjectsSection";
 import CreativeSection from "../Components/Creative/CreativeSection";
 import ContactOverlay from "../Components/Contact/ContactOverlay";
 import FloatingNavButton from "../Components/FloatingNav/FloatingNavButton";
+import CertificationsSection from "../Components/Certifications/CertificationsSection";
 
 export default function LandingPage() {
   const [showContact, setShowContact] = useState(false);
@@ -47,6 +48,14 @@ export default function LandingPage() {
               💼 Work
             </Link>
             <Link
+              to="certifications"
+              smooth={true}
+              duration={500}
+              className="nav-btn"
+            >
+              📜 Certifications
+            </Link>
+            <Link
               to="creative"
               smooth={true}
               duration={500}
@@ -77,6 +86,9 @@ export default function LandingPage() {
         <ProjectsSection />
       </section>
 
+      <section id="certifications">
+        <CertificationsSection />
+      </section>
       <section id="creative">
         <CreativeSection />
       </section>
