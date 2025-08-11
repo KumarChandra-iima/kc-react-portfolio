@@ -155,7 +155,7 @@ const experienceTimeline = [
         title: "Lab Results Integration",
         description:
           "Enabled approval workflows for multi-level lab technician verification and doctor annotations in test results.",
-        tags: ["Lab Integration", "Workflow", "Healthcare"],
+        tags: ["Angular", ".Net Core", "Typescript", "Web API", "SQL"],
       },
       {
         title: "Cyclus HIS Billing System",
